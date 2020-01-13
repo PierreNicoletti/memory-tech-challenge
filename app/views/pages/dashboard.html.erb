@@ -22,17 +22,23 @@
   <!-- Revenue -->
   <div class="card dashboard-card">
     <strong>Total revenue</strong>
-    <p><%= @total_revenue %> M€</p>
+    <div class="revenue">
+      <p><%= @total_revenue %> K€</p>
+    </div>
   </div>
   <!-- Average revenue per order -->
   <div class="card dashboard-card">
     <strong>Average revenue / order</strong>
-    <p>40.1 M€</p>
+    <div class="avg-revenue">
+      <p><%= @average_revenue %> €</p>
+    </div>
   </div>
   <!-- Number of customers -->
   <div class="card dashboard-card">
     <strong>Number of customers</strong>
-    <div class="customers"><p><%= @number_of_customers %> K</p></div>
+    <div class="customers">
+      <p><%= @number_of_customers %> K</p>
+    </div>
   </div>
 </div>
 

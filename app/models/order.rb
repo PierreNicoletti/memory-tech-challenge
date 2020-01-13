@@ -8,9 +8,9 @@ class Order < ApplicationRecord
 
   def total_amount
     total_amount = 0
-    # order_items.each do |order_item|
-    #   total_amount += order_item.quantity * order_item.product.unit_price.to_f
-    # end
+    order_items.each do |order_item|
+      total_amount += order_item.quantity * order_item.unit_price
+    end
     return total_amount
   end
 
