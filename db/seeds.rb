@@ -65,27 +65,3 @@ Order.import(orders)
 
 OrderItem.import(order_items)
 
-
-# CSV.foreach(filepath, csv_options) do |row|
-#   unless customer_ids.include?(row['customer_id'])
-#     customer = Customer.create({ external_id: row['customer_id'], country: row['country'] })
-#     customer_ids << row['customer_id']
-#   end
-
-#   unless product_codes.include?(row['product_code'])
-#     product = Product.create({ code: row['product_code'], unit_price: row['unit_price'] })
-#     product_codes << row['product_code']
-#   end
-
-#   unless order_ids.include?(row['order_id'])
-#     order = Order.create({ date: row['date'].to_date, external_id: row['order_id'], customer_id: Customer.last.id})
-#     order_ids << row['order_id']
-#   end
-
-#   OrderItem.create({ quantity: row['quantity'].to_i, product_id: Product.last.id, order_id: Order.last.id})
-
-# end
-
-# customers.uniq.each do |customer|
-#   Customer.create(customer)
-# end

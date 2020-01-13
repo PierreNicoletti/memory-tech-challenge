@@ -6,8 +6,10 @@
   <div class="form-group mb-2">
     <label for="name">Country: </label>
     <select name="country" id="country" required class="mx-sm-3 form-control">
-        <option selected>Choose...</option>
-        <option>France</option>
+        <option selected>All</option>
+        <% @countries.each do |country| %>
+          <option><%= country %></option>
+        <% end %>
     </select>
   </div>
   <button type="submit" class="btn btn-primary mb-2">Submit</button>
@@ -20,7 +22,7 @@
   <!-- Revenue -->
   <div class="card dashboard-card">
     <strong>Total revenue</strong>
-    <p>10.1 M€</p>
+    <p><%= @total_revenue %> M€</p>
   </div>
   <!-- Average revenue per order -->
   <div class="card dashboard-card">
@@ -30,7 +32,7 @@
   <!-- Number of customers -->
   <div class="card dashboard-card">
     <strong>Number of customers</strong>
-    <p>55 K</p>
+    <div class="customers"><p><%= @number_of_customers %> K</p></div>
   </div>
 </div>
 
