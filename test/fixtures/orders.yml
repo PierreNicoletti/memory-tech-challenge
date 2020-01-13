@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2020-01-13
+  customer: one
+  external_id: MyString
+
+two:
+  date: 2020-01-13
+  customer: two
+  external_id: MyString
