@@ -1,6 +1,39 @@
+<div class="dashboard-title">
+  <h1>My dashboard</h1>
+</div>
 
+<form action="/" method="get" class="form-inline" data-remote="true">
+  <div class="form-group mb-2">
+    <label for="name">Country: </label>
+    <select name="country" id="country" required class="mx-sm-3 form-control">
+        <option selected>Choose...</option>
+        <option>France</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
 
-<p>Test</p>
+<div class="dashboard-subtitle">
+  <h3>Summary</h3>
+</div>
+<div class="dashboard-container">
+  <!-- Revenue -->
+  <div class="card dashboard-card">
+    <strong>Total revenue</strong>
+    <p>10.1 M€</p>
+  </div>
+  <!-- Average revenue per order -->
+  <div class="card dashboard-card">
+    <strong>Average revenue / order</strong>
+    <p>40.1 M€</p>
+  </div>
+  <!-- Number of customers -->
+  <div class="card dashboard-card">
+    <strong>Number of customers</strong>
+    <p>55 K</p>
+  </div>
+</div>
 
-Salut
-
+<div class="dashboard-subtitle">
+  <h3>Revenue per month</h3>
+</div>
