@@ -54,4 +54,5 @@ class PagesController < ApplicationController
     end
     return count
   end
+
 end

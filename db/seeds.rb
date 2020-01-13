@@ -20,10 +20,6 @@ puts "Destroying all customers"
 
 Customer.delete_all
 
-puts "Destroying all products"
-
-Product.delete_all
-
 puts "Parsing CSV file..."
 
 filepath = 'db/memory-tech-challenge-data.csv'
