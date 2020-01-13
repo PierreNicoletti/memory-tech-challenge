@@ -24,16 +24,14 @@ puts "Destroying all products"
 
 Product.delete_all
 
-puts "Seeding database from CSV file..."
+puts "Parsing CSV file..."
 
 filepath = 'db/memory-tech-challenge-data.csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 
 customer_ids = []
 order_ids = []
-product_codes = []
 customers = []
-products = []
 orders = []
 order_items = []
 
@@ -43,25 +41,24 @@ CSV.foreach(filepath, csv_options) do |row|
     customer_ids << row['customer_id']
   end
 
-  unless product_codes.include?(row['product_code'])
-    products << Product.new({ code: row['product_code'], unit_price: row['unit_price'] })
-    product_codes << row['product_code']
-  end
-
   unless order_ids.include?(row['order_id'])
     orders << Order.new({ date: row['date'].to_date, external_id: row['order_id'], customer: customers.last})
     order_ids << row['order_id']
   end
 
-  order_items << OrderItem.new({ quantity: row['quantity'].to_i, product: products.last, order: orders.last})
+  order_items << OrderItem.new({ quantity: row['quantity'].to_i, product_code: row['product_code'], product_description: row['product_description'], unit_price: row['unit_price'].to_f, order: orders.last})
 
 end
 
+puts "Importing customers to DB..."
+
 Customer.import(customers)
 
-Product.import(products)
+puts "Importing orders to DB..."
 
 Order.import(orders)
+
+puts "Importing order items to DB..."
 
 OrderItem.import(order_items)
 
