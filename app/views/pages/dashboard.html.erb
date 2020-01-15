@@ -1,4 +1,4 @@
-<div class="dashboard-title" id="hello">
+<div class="dashboard-title">
   <h1>My dashboard</h1>
 </div>
 
@@ -47,10 +47,26 @@
   <h3>Revenue per months</h3>
 </div>
 
-<div id="test">
-  Hello
+<div id="chart-x-data"
+  <% (1..12).each do |i| %>
+  data-m<%= i %>="<%=@months[i-1]%>"
+  <%end %>
+>
 </div>
 
-<canvas id="myChart" width="600" height="400"></canvas>
+<div id="chart-y-data"
+  <% (1..12).each do |i| %>
+  data-m<%= i %>="<%=@revenues_per_month[i-1]%>"
+  <%end %>
+>
+</div>
+
+<div class="graph-container">
+  <div>
+  <canvas id="myChart" width="800" height="300"></canvas>
+  </div>
+</div>
+
+
 
 

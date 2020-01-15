@@ -26,33 +26,44 @@ document.addEventListener("turbolinks:load", function() {
 
 const loadChart = () => {
 
-  // var chartXData = document.getElementById('chart-x-data');
-  // var chartYData = document.getElementById('chart-y-data');
+  var xData = document.getElementById('chart-x-data').dataset;
+  var yData = document.getElementById('chart-y-data').dataset;
 
   var ctx = document.getElementById('myChart');
-  console.log(document.getElementById("hello"));
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Hello', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          labels: [xData.m1, xData.m2, xData.m3, xData.m4, xData.m5, xData.m6, xData.m7, xData.m8, xData.m9, xData.m10, xData.m11, xData.m12],
           datasets: [{
-              label: '# of Votes',
-              data: [1, 2, 3, 5, 2, 3],
+              label: 'Revenue in k€',
+              data: [yData.m1, yData.m2, yData.m3, yData.m4, yData.m5, yData.m6, yData.m7, yData.m8, yData.m9, yData.m10, yData.m11, yData.m12],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)'
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(54, 162, 235, 0.2)'
               ],
               borderColor: [
-                  'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)'
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(54, 162, 235, 1)'
               ],
               borderWidth: 1
           }]
